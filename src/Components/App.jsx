@@ -1,18 +1,37 @@
 import React, {Component} from 'react';
 import './App.css';
-import NamesList from './NamesList/NamesList';
+import SuperHeroTable from './SuperHeroTable/SuperHeroTable'
 
 class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            names: ['Mike', 'Nevin', 'Aaron', 'Tory', 'Kellie']
+            superheroes: [
+                {
+                    superheroId: 1,
+                    name: 'Batman',
+                    primaryAbility: 'Wealthy',
+                    secondarAbility: 'Rich'
+                },
+                {
+                    superheroId: 2,
+                    name: 'Superman',
+                    primaryAbility: 'Super strength',
+                    secondarAbility: 'Fly'
+                },
+                {
+                    superheroId: 3,
+                    name: 'Spiderman',
+                    primaryAbility: 'Spider senses',
+                    secondarAbility: 'Shoots web'
+                }
+            ]
         };
     }
 
     render(){
         return(
-                <NamesList listOfNames={this.state.names}/>
+                <SuperHeroTable arrayOfSuperHeroes={this.state.superheroes}/>
         )
     }
 }
